@@ -121,11 +121,64 @@
             </p>
 
             <p class="field">
-              <button class="ui button" id="submit_btn" type="submit">Submit</button>
+              <button id="submit" class="ui button"  type="submit">Submit</button>
             </p>
 
           </div>
         </div>
+
+        </div>
+      </form>
+
+      <form id="form-marriage-actions" class="ui form">
+
+        <div class="row">
+
+          <div class="ui two column middle aligned very relaxed stackable grid">
+
+            <div class="account-1 column">
+              <img src="./images/confirm.png" style="float: right">
+            </div>
+
+            <div class="account-1 column">
+              <p><strong>Yeah!</strong> Your marriage contract is in proposal state. You may confirm it or modify it and resend it to your potential partner for confirmation.</p>
+              <div class="ui labeled button" tabindex="0">
+                <div class="ui red button right pointing">
+                  <i class="heart icon"></i>
+                </div>
+                <button id="marriage-confirm" class="ui basic red label">
+                  Confirm marriage contract
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="ui two column middle aligned very relaxed stackable grid">
+
+            <div class="account-1 column">
+              <p><strong>Sich of it?</strong><br /> No problem. Your divorce is just on click away.</p>
+              <div class="ui labeled button blue" tabindex="0">
+                <div class="ui blue button pointing">
+                  <i class="fork large icon"></i>
+                </div>
+                <button id="marriage-divorce" name="marriage-divorce" class="ui left label basic">
+                  Get divorced
+                </button>
+              </div>
+
+            </div>
+
+            <div class="account-1 column">
+              <img src="./images/divorce.png">
+            </div>
+
+          </div>
 
         </div>
       </form>

@@ -29,9 +29,19 @@
 
 
     // Do something in Submit.
-    $("#submit_btn").click(function (e) {
+    $(".button").click(function (e) {
       e.preventDefault();
-      getMarried();
+      var id = $(e.currentTarget);
+
+      console.log(e);
+
+      console.log('clicked ' + id);
+
+      if (id === 'submit') {
+        getMarried();
+      }
+
+
 
     });
 
