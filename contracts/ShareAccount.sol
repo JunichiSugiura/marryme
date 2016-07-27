@@ -1,0 +1,5 @@
+contract ShareAccount {
+  function ShareAccount() {
+
+  }
+}
