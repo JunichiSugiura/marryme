@@ -1,0 +1,77 @@
+// @import 'base/_reset.scss';
+
+#bg-image-footer {
+  height: auto;
+  width: 100%;
+  background: url('images/couples.jpg');
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-attachment: local;
+  padding-bottom: 180px;
+
+}
+
+.wrapper {
+  margin: 2em auto 0;
+  max-width: 47em;
+}
+
+.form-quickserach-wrapper .form {
+  padding-top: 3em;
+  padding-bottom: 4em;
+}
+
+
+.two.column {
+  position: relative;
+}
+
+.field-account {
+  width: 21em !important;
+}
+
+.field-ether {
+  .labeled.input {
+    width: 10em !important
+  }
+
+}
+
+.field-share {
+  .right.labeled {
+    width: 5em !important;
+  }
+}
+
+ .account-2 {
+   >div {
+     margin-left: 1em;
+   }
+ }
+.vertical.divider {
+  font-size: 4em !important;
+  color: #E0E1E2 !important;
+}
+
+.radio.checkbox {
+  width: 100%;
+}
+
+.my-label {
+  display: block;
+  margin: 1em 0 .28571429rem;
+  color: rgba(0,0,0,.87);
+  font-size: .92857143em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.ui.read-only {
+  cursor:no-drop;
+
+  label {
+    cursor:no-drop !important;
+    color: #E0E1E2 !important;
+  }
+}
+

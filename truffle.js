@@ -5,13 +5,15 @@ module.exports = {
       "javascripts/app.js"
     ],
     "app.css": [
-      "stylesheets/app.css"
+      "stylesheets/app.scss"
     ],
-    "images/": "images/"
+    "images/": "images/",
+    "semantic/": "semantic/",
+    "fullpage.js/": "fullpage.js/",
+    "jquery-3.1.0.min.js": "jquery-3.1.0.min.js"
   },
   deploy: [
-    "MetaCoin",
-    "ConvertLib"
+    "ShareAccount"
   ],
   rpc: {
     host: "localhost",
