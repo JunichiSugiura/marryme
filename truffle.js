@@ -10,7 +10,7 @@ module.exports = {
     "images/": "images/"
   },
   deploy: [
-    "ShareAccount"
+    "MarriageManager"
   ],
   rpc: {
     host: "localhost",
