@@ -18,12 +18,18 @@ contract Marriage {
     phase = PhaseOptions.Proposed;
   }
 
-  function edit() public {
+  function edit(uint _initAmount) public {
     if(partner0.wallet == msg.sender) {
-      partner0.wallet.send(this.balance);
+      // return eth to last sender
+      partner0.wallet.send(partner0.initAmount);
+
+      // set new initAmount
+      partner0.initAmount = _initAmount;
       partner1.initAmount = msg.value;
     } else {
-      partner1.wallet.send(this.balance);
+      partner1.wallet.send(partner1.initAmount);
+
+      partner1.initAmount = _initAmount;
       partner0.initAmount = msg.value;
     }
   }
