@@ -31,11 +31,11 @@
 
       <div class="form-quickserach-wrapper ui center aligned grid">
 
-        <form id="form-quickserach" class="ui form aligned">
+        <form id="search-marriage" class="ui form aligned">
 
           <div class="ui category search">
             <div class="ui icon input">
-              <input class="prompt" type="text" placeholder="Find your marriage by id">
+              <input name="search-marriage"  class="" type="text" placeholder="Find your marriage by id">
               <i class="search icon"></i>
             </div>
           </div>
@@ -54,7 +54,7 @@
 
               <div class="field field-account">
                 <label>Account ID</label>
-                <input type="text" name="account_1" placeholder="Ethereum acount id">
+                <input type="text" name="account_1" placeholder="Ethereum account id">
               </div>
 
               <div class="field field-ether">
@@ -84,7 +84,7 @@
 
               <div class="field field-account">
                 <label>Account ID</label>
-                <input type="text" name="account_1" placeholder="Ethereum acount id">
+                <input type="text" name="account_1" placeholder="Ethereum account id">
               </div>
 
               <div class="field field-ether">
@@ -121,7 +121,7 @@
             </p>
 
             <p class="field">
-              <button id="submit" class="ui button"  type="submit">Submit</button>
+              <button id="marriange-submit" class="ui button"  type="submit">Submit</button>
             </p>
 
           </div>
@@ -131,7 +131,7 @@
       </form>
 
       <form id="form-marriage-actions" class="ui form">
-
+        <input id="marriage-id" name="marriage-id" type="hidden" />
         <div class="row">
 
           <div class="ui two column middle aligned very relaxed stackable grid">
@@ -142,11 +142,11 @@
 
             <div class="account-1 column">
               <p><strong>Yeah!</strong> Your marriage contract is in proposal state. You may confirm it or modify it and resend it to your potential partner for confirmation.</p>
-              <div class="ui labeled button" tabindex="0">
+              <div id="marriage-confirm" class="ui labeled button" tabindex="0">
                 <div class="ui red button right pointing">
                   <i class="heart icon"></i>
                 </div>
-                <button id="marriage-confirm" class="ui basic red label">
+                <button id="marriage-confirm" name="marriage-confirm" class="ui basic red label">
                   Confirm marriage contract
                 </button>
               </div>
@@ -162,12 +162,12 @@
           <div class="ui two column middle aligned very relaxed stackable grid">
 
             <div class="account-1 column">
-              <p><strong>Sich of it?</strong><br /> No problem. Your divorce is just on click away.</p>
-              <div class="ui labeled button blue" tabindex="0">
+              <p><strong>Sick of it?</strong><br /> No problem. Your divorce is just on click away.</p>
+              <div id="marriage-divorce" class="ui labeled button blue" tabindex="0">
                 <div class="ui blue button pointing">
                   <i class="fork large icon"></i>
                 </div>
-                <button id="marriage-divorce" name="marriage-divorce" class="ui left label basic">
+                <button name="marriage-divorce" class="ui left label basic">
                   Get divorced
                 </button>
               </div>

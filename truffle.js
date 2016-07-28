@@ -14,7 +14,7 @@ module.exports = {
   },
   deploy: [
     "ShareAccount"
-    "MarriageManager"
+    // ,"MarriageManager"
   ],
   rpc: {
     host: "localhost",

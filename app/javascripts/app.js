@@ -28,22 +28,46 @@
     });
 
 
-    // Do something in Submit.
-    $(".button").click(function (e) {
+    // Event Handlers.
+
+    // Do something in Submit form.
+    $("#marriange-submit").click(function (e) {
       e.preventDefault();
-      var id = $(e.currentTarget);
-
-      console.log(e);
-
-      console.log('clicked ' + id);
-
-      if (id === 'submit') {
-        getMarried();
-      }
-
-
-
+      console.log('marriange-submit clicked');
+      getMarried();
     });
+
+    // Do something in Submit marriage-confirm.
+    $("#marriage-confirm").click(function (e) {
+      e.preventDefault();
+      console.log('marriage-confirm clicked');
+    });
+
+    // Do something in Submit marriage-confirm.
+    $("#marriage-divorce").click(function (e) {
+      e.preventDefault();
+      console.log('marriage-divorce clicked');
+    });
+
+    // Do something in Submit marriage-confirm.
+    $("#search-marriage").on('submit', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var val = $("#search-marriage input").val();
+      if (val != '') {
+        searchMarriage(val);
+      }
+    });
+
+    $("#search-marriage .icon").on('click', function (e) {
+      var val = $("#search-marriage input").val();
+      if (val != '') {
+        searchMarriage(val);
+      }
+    });
+
+
+    // UI Functions
 
     // Keep 100% in equal share.
     $('input.share-value').on('change', function(e){
@@ -57,6 +81,19 @@
     });
 
   });
+
+  // Logic Functions
+
+  // Search for a marriage by ID.
+  function searchMarriage(id) {
+    console.log(id, 'search-marriage submitted');
+
+    var contractInstance = ShareAccount.at(id);
+    
+    console.log(contractInstance);
+
+  }
+
 
 
   // Interact with Smart contract.
