@@ -10,7 +10,7 @@ module.exports = {
     "images/": "images/"
   },
   deploy: [
-    "MarriageManager"
+    "Marriage"
   ],
   rpc: {
     host: "localhost",
