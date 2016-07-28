@@ -159,13 +159,8 @@
 
     console.log(data, 'data@getMarried');
 
-
-
-
     // Get the contract.
     var marriage_contract = Marriage.deployed();
-console.log(marriage);
-    debugger;
 
 
 
