@@ -28,6 +28,9 @@
 
 .field-account {
   width: 21em !important;
+  input {
+    text-transform: lowercase !important;
+  }
 }
 
 .field-ether {

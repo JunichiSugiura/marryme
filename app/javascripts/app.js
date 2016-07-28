@@ -25,6 +25,9 @@
       accounts = accs;
       account = accounts[0];
 
+      var default_account_metamask = web3.eth.defaultAccount;
+      $('input[name="account_1"]').val(default_account_metamask);
+
     });
 
 
@@ -112,6 +115,12 @@
       if (elm.attr('id') === 'share_2') {
         $('#share_1').val(100 - elm.val());
       }
+    });
+
+
+    $('.field-account input').on('change', function(e){
+      var elm = $(this);
+      elm.val(elm.val().toLowerCase());
     });
 
   });
