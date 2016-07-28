@@ -33,7 +33,41 @@
     // Do something in Submit form.
     $("#marriange-submit").click(function (e) {
       e.preventDefault();
-      console.log('marriange-submit clicked');
+
+      // TODO Data validation.
+
+      var fields = [
+        'account_1',
+        'ether_1',
+        'share_1',
+        'account_2',
+        'ether_2',
+        'share_2'
+      ];
+
+      var data = {
+        account_1: '',
+        ether_1: '',
+        share_1: '',
+        account_2: '',
+        ether_2: '',
+        share_2: ''
+      };
+
+      $(fields).each(function(index, field) {
+        var val = $('input[name=' + field + ']').val();
+        if (val !== '' || val === 'undefined') {
+          data[field] = val;
+        }
+        else {
+          $('#' + field).addClass('error');
+        }
+        console.log(field + ' (' + index + ')');
+      });
+
+
+
+      console.log(data, 'data@marriange-submit clicked');
       getMarried();
     });
 
@@ -89,11 +123,26 @@
     console.log(id, 'search-marriage submitted');
 
     var contractInstance = ShareAccount.at(id);
-    
+
     console.log(contractInstance);
+
+    // TODO Check the status of the contract instance and show the form accordingly.
+
+    // getDivorved(contractInstance);
+
+    // confirmMarriage(contractInstance)
 
   }
 
+  // Get divorced
+  function getDivorved(contractInstance) {
+   console.log(contractInstance, 'contractInstance@getDivorved');
+  }
+
+  // Confirm marriage
+  function confirmMarriage(contractInstance) {
+    console.log(contractInstance, 'contractInstance@confirmMarriage');
+  }
 
 
   // Interact with Smart contract.
