@@ -66,11 +66,13 @@ contract Marriage {
     phase = PhaseOptions.Married;
   }
 
-  // function spend() public {
-
-  // }
-
   function divornce() public {
+    if(msg.sender == partner0.wallet) {
+      partner0.wallet.send(this.balance * (partner0.splitShare / 100));
+    } else {
+      partner1.wallet.send(this.balance * (100 - partner0.splitShare / 100));
+    }
 
+    // suicide(owner);
   }
 }
