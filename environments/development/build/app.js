@@ -5735,17 +5735,17 @@ var Pudding =
 (function() {
 
   var contract_data = {
-    abi: [{"inputs":[{"name":"_owner","type":"address"},{"name":"_value","type":"uint256"}],"type":"constructor"}],
-    binary: "606060408181528060ae833960a090525160805160018054808201825560009081526020818152604080832060028186019081553360a08190523460c08190528680528386528487208054600160a060020a03199081169093178155880155610120845260e08990526101008890528686528386208054909116891781558601879055855480870187558552928490529220905492019190915550505060068060a86000396000f3606060405200",
-    unlinked_binary: "606060408181528060ae833960a090525160805160018054808201825560009081526020818152604080832060028186019081553360a08190523460c08190528680528386528487208054600160a060020a03199081169093178155880155610120845260e08990526101008890528686528386208054909116891781558601879055855480870187558552928490529220905492019190915550505060068060a86000396000f3606060405200",
-    address: "0xae9ac36f6523319324da178189e244197e0b2599",
+    abi: [{"constant":false,"inputs":[],"name":"accept","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"spend","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"divorce","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_initAmount","type":"uint256"}],"name":"edit","outputs":[],"type":"function"},{"inputs":[{"name":"_wallet1","type":"address"},{"name":"_initAmount1","type":"uint256"}],"type":"constructor"}],
+    binary: "6060604081815280610163833960a09052516080513360a08190523460c081905260008054600160a060020a0319908116909317905560015561012060405260e0839052610100829052600280549091168317905560038190556004805460ff19169055505060f1806100726000396000f3606060405260e060020a60003504632852b71c8114603857806345615bcc14605d578063dff44b2f14605d578063f6158485146062575b005b60005460369033600160a060020a039081169116141560b157600154341460bd576002565b60365b565b6036600435600054600160a060020a039081163391909116141560c157600254600354600160a060020a039190911690600090606082818181858883f1505050600383905550503460015560ee565b60035434146060576002565b6060565b60008054600154600160a060020a039091169190606082818181858883f150505060018390555050346003555b5056",
+    unlinked_binary: "6060604081815280610163833960a09052516080513360a08190523460c081905260008054600160a060020a0319908116909317905560015561012060405260e0839052610100829052600280549091168317905560038190556004805460ff19169055505060f1806100726000396000f3606060405260e060020a60003504632852b71c8114603857806345615bcc14605d578063dff44b2f14605d578063f6158485146062575b005b60005460369033600160a060020a039081169116141560b157600154341460bd576002565b60365b565b6036600435600054600160a060020a039081163391909116141560c157600254600354600160a060020a039190911690600090606082818181858883f1505050600383905550503460015560ee565b60035434146060576002565b6060565b60008054600154600160a060020a039091169190606082818181858883f150505060018390555050346003555b5056",
+    address: "0xe69b0c388b4543fad60a8c0ea582d65b2f6ed01e",
     generated_with: "2.0.9",
-    contract_name: "MarriageManager"
+    contract_name: "Marriage"
   };
 
   function Contract() {
     if (Contract.Pudding == null) {
-      throw new Error("MarriageManager error: Please call load() first before creating new instance of this contract.");
+      throw new Error("Marriage error: Please call load() first before creating new instance of this contract.");
     }
 
     Contract.Pudding.apply(this, arguments);
@@ -5762,7 +5762,7 @@ var Pudding =
 
   Contract.new = function() {
     if (Contract.Pudding == null) {
-      throw new Error("MarriageManager error: Please call load() first before calling new().");
+      throw new Error("Marriage error: Please call load() first before calling new().");
     }
 
     return Contract.Pudding.new.apply(Contract, arguments);
@@ -5770,7 +5770,7 @@ var Pudding =
 
   Contract.at = function() {
     if (Contract.Pudding == null) {
-      throw new Error("MarriageManager error: Please call load() first before calling at().");
+      throw new Error("Marriage error: Please call load() first before calling at().");
     }
 
     return Contract.Pudding.at.apply(Contract, arguments);
@@ -5778,7 +5778,7 @@ var Pudding =
 
   Contract.deployed = function() {
     if (Contract.Pudding == null) {
-      throw new Error("MarriageManager error: Please call load() first before calling deployed().");
+      throw new Error("Marriage error: Please call load() first before calling deployed().");
     }
 
     return Contract.Pudding.deployed.apply(Contract, arguments);
@@ -5789,7 +5789,7 @@ var Pudding =
   } else {
     // There will only be one version of Pudding in the browser,
     // and we can use that.
-    window.MarriageManager = Contract;
+    window.Marriage = Contract;
   }
 
 })();
@@ -5823,5 +5823,5 @@ if (typeof web3 !== 'undefined') {
 
 Pudding.setWeb3(window.web3);                                 
 
-Pudding.load([MarriageManager], window);               
+Pudding.load([Marriage], window);               
 
