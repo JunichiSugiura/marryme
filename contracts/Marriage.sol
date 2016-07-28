@@ -4,21 +4,37 @@ contract Marriage {
   struct Partner {
     address wallet;
     uint initAmount;
+    uint splitShare;
   }
+
+  address owner;
 
   Partner partner0;
   Partner partner1;
 
   PhaseOptions phase;
 
-  function Marriage(address _wallet1, uint _initAmount1) {
-    partner0 = Partner({wallet: msg.sender, initAmount: msg.value});
-    partner1 = Partner({wallet: _wallet1, initAmount: _initAmount1});
-
+  function Marriage() {
+    // owner = 0x0asf;
     phase = PhaseOptions.Proposed;
   }
 
-  function edit(uint _initAmount) public {
+  function firstPayment(uint _splitShare0, address _wallet1, uint _initAmount1, uint _splitShare1) public {
+    partner0 = Partner({wallet: msg.sender, initAmount: msg.value, splitShare: _splitShare0});
+    partner1 = Partner({wallet: _wallet1, initAmount: _initAmount1, splitShare: _splitShare1});
+  }
+
+  function getPartners() public returns (address wallet0, uint initAmount0, uint splitShare0, address wallet1, uint initAmount1, uint splitShare1) {
+    wallet0 = partner0.wallet;
+    initAmount0 = partner0.initAmount;
+    splitShare0 = partner0.splitShare;
+
+    wallet1 = partner1.wallet;
+    initAmount1 = partner1.initAmount;
+    splitShare1 = partner1.splitShare;
+  }
+
+  function update(uint _initAmount) public {
     if(partner0.wallet == msg.sender) {
       // return eth to last sender
       partner1.wallet.send(partner1.initAmount);
@@ -41,7 +57,7 @@ contract Marriage {
       }
     } else {
       if(msg.value != partner1.initAmount) {
-        throw;
+        throw;  
       }
     }
   }
@@ -50,11 +66,11 @@ contract Marriage {
     phase = PhaseOptions.Married;
   }
 
-  function spend() public {
+  // function spend() public {
 
-  }
+  // }
 
-  function divorce() public {
+  function divornce() public {
 
   }
 }
