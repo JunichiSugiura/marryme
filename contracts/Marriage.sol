@@ -34,19 +34,20 @@ contract Marriage {
     }
   }
 
-  function accept() public {
-    if(msg.value != getInitAmount()) {
-      throw;
+  modifier onlyInitAmountIsPaid() {
+    if(partner0.wallet == msg.sender) {
+      if(msg.value != partner0.initAmount) {
+        throw;
+      }
+    } else {
+      if(msg.value != partner1.initAmount) {
+        throw;
+      }
     }
-    phase = PhaseOptions.Married;
   }
 
-  function getInitAmount() returns(uint) {
-    if(partner0.wallet == msg.sender) {
-      return partner0.initAmount;
-    } else {
-      return partner1.initAmount;
-    }
+  function accept() onlyInitAmountIsPaid() public {
+    phase = PhaseOptions.Married;
   }
 
   function spend() public {
