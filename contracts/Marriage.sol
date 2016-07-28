@@ -57,7 +57,7 @@ contract Marriage {
       }
     } else {
       if(msg.value != partner1.initAmount) {
-        throw;  
+        throw;
       }
     }
   }
@@ -65,10 +65,6 @@ contract Marriage {
   function accept() onlyInitAmountIsPaid() public {
     phase = PhaseOptions.Married;
   }
-
-  // function spend() public {
-
-  // }
 
   function divornce() public {
 

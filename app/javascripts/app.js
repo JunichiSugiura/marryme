@@ -57,6 +57,8 @@
         share_2: ''
       };
 
+      // Basic validation.
+      // TODO More validation.
       $(fields).each(function(index, field) {
         var val = $('input[name=' + field + ']').val();
         if (val !== '' || val === 'undefined') {
@@ -68,10 +70,8 @@
         console.log(field + ' (' + index + ')');
       });
 
-
-
       console.log(data, 'data@marriange-submit clicked');
-      getMarried();
+      getMarried(data);
     });
 
     // Do something in Submit marriage-confirm.
@@ -155,18 +155,47 @@
 
 
   // Interact with Smart contract.
-  function getMarried() {
+  function getMarried(data) {
+
+    console.log(data, 'data@getMarried');
+
+
+
 
     // Get the contract.
-    var shareAccount = ShareAccount.deployed();
+    var marriage_contract = Marriage.deployed();
+console.log(marriage);
+    debugger;
+
+
 
     // Call getMarried in the Contract shareAccount
     // @return promise
-    shareAccount.getMarried({from: accounts[0], gas: 3141592}).then(function () {
 
-      return shareAccount.status();
+
+    // var contractInstance = getMarried.new({data: '0x12345...', from: myAccount, gas: 1000000});
+
+
+    // Create new Instance of Marriage contract.
+    // firstPayment(uint _splitShare0, address _wallet1, uint _initAmount1, uint _splitShare1)
+
+    // 'account_1',
+    //     'ether_1',
+    //     'share_1',
+    //     'account_2',
+    //     'ether_2',
+    //     'share_2'
+    marriage_contract.firstPayment(data.share_1,
+                                  data.account_2,
+                                  data.ether_2,
+                                  data.share_2,
+                                  {from: accounts[0], gas: 3141592}).then(function (whatishere) {
+
+      console.log(whatishere);
+      // return marriage.status();
 
     }).then(function (promise_return_value) {
+      debugger;
 
       // Update HTML
       setStatus(promise_return_value);
@@ -175,6 +204,26 @@
       console.log(e);
       setStatus("Error getting balance; see log.");
     });
+
+
+    // DEMO VERSION
+    // TODO DELETE this
+
+    // Call getMarried in the Contract shareAccount
+    // @return promise
+    // shareAccount.getMarried({from: accounts[0], gas: 3141592}).then(function () {
+    //
+    //   return marriage.status();
+    //
+    // }).then(function (promise_return_value) {
+    //
+    //   // Update HTML
+    //   setStatus(promise_return_value);
+    //
+    // }).catch(function (e) {
+    //   console.log(e);
+    //   setStatus("Error getting balance; see log.");
+    // });
   }
 
   // Helper: Update html in div[id=status]
