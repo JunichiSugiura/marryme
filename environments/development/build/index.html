@@ -1,15 +1,196 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>marryme - One Click Marriage</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href="./app.css" rel='stylesheet' type='text/css'>
+
+  <script src="./jquery-3.1.0.min.js"></script>
+
   <script src="./app.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css">
+  <script src="./semantic/semantic.min.js"></script>
+
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+
+  <script>
+
+
+  </script>
+
 </head>
 <body>
-  <h1>marryme</h1>
-  <h2>One Click Marriage</h2>
+  <div id="root"></div>
+  <div id="bg-image-footer">
+
+    <div class="wrapper">
+
+      <div class="ui center aligned icon header">
+        <h1>Marry me</h1>
+        <h3>Reliable marriage &amp; economic divorce on the blockchain.</h3>
+      </div>
+
+      <div class="form-quickserach-wrapper ui center aligned grid">
+
+        <form id="search-marriage" class="ui form aligned">
+
+          <div class="ui category search">
+            <div class="ui icon input">
+              <input name="search-marriage"  class="" type="text" placeholder="Find your marriage by id">
+              <i class="search icon"></i>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+
+      <form id="form-getmarried" class="ui form">
+
+        <div class="row">
+
+          <div class="ui two column middle aligned very relaxed stackable grid">
+
+            <div class="account-1 column">
+
+              <div id="account_1" class="field field-account">
+                <label>Account ID</label>
+                <input type="text" name="account_1" placeholder="Ethereum account id">
+              </div>
+
+              <div class="field field-ether">
+                <p class="ui my-label">Initial amount of Ether</p>
+                <div class="ui right labeled input">
+                  <input  type="number" step="0.1" name="ether_1" placeholder="100" value="100">
+                  <div class="ui basic label">
+                    ether
+                  </div>
+                </div>
+              </div>
+
+              <div class="field field-share">
+                <p class="ui my-label">Share after divorce</p>
+                <div class="ui right labeled input">
+                  <input id="share_1" class="share-value" type="number" value="50" name="share_1" min="0" max="100">
+                  <div class="ui basic label"> % </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="ui vertical divider">&amp;</div>
+
+
+            <div class="account-2 column">
+
+              <div id="account_2" class="field field-account">
+                <label>Account ID</label>
+                <input type="text" name="account_2" placeholder="Ethereum account id">
+              </div>
+
+              <div class="field field-ether">
+                <p class="ui my-label">Initial amount of Ether</p>
+                <div class="ui right labeled input">
+                  <input  type="number" step="0.1" name="ether_2" placeholder="100" value="100">
+                  <div class="ui basic label">
+                    ether
+                  </div>
+                </div>
+              </div>
+
+              <div class="field field-share">
+                <p class="ui my-label">Share after divorce</p>
+                <div class="ui right labeled input">
+                  <input id="share_2" class="share-value" type="number" value="50" name="share_2" min="0" max="100">
+                  <div class="ui basic label"> % </div>
+                </div>
+              </div>
+
+            </div>
+
+      </div>
+
+        <div class="row">
+
+          <div class="ui stackable one column grid" style="margin-top: 2em;">
+            <h3>Divorce agreement</h3>
+            <p class="ui radio checkbox read-only inline fields">
+              <input type="radio" name="uniliteral" checked="checked" readonly="readonly">
+              <label>Uniliteral</label>
+              <input type="radio" name="consensual" readonly="readonly">
+              <label>Consensual</label>
+            </p>
+
+            <p class="field">
+              <button id="marriange-submit" class="ui button"  type="submit">Submit</button>
+            </p>
+
+          </div>
+        </div>
+
+        </div>
+      </form>
+
+      <form id="form-marriage-actions" class="ui form">
+        <input id="marriage-id" name="marriage-id" type="hidden" />
+        <div class="row">
+
+          <div class="ui two column middle aligned very relaxed stackable grid">
+
+            <div class="account column">
+              <img src="./images/confirm.png" style="float: right">
+            </div>
+
+            <div class="account column">
+              <p><strong>Yeah!</strong> Your marriage contract is in proposal state. You may confirm it or modify it and resend it to your potential partner for confirmation.</p>
+              <div id="marriage-confirm" class="ui labeled button" tabindex="0">
+                <div class="ui red button right pointing">
+                  <i class="heart icon"></i>
+                </div>
+                <button id="marriage-confirm" name="marriage-confirm" class="ui basic red label">
+                  Confirm marriage contract
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="ui two column middle aligned very relaxed stackable grid">
+
+            <div class="column">
+              <p><strong>Sick of it?</strong><br /> No problem. Your divorce is just on click away.</p>
+              <div id="marriage-divorce" class="ui labeled button blue" tabindex="0">
+                <div class="ui blue button pointing">
+                  <i class="fork large icon"></i>
+                </div>
+                <button name="marriage-divorce" class="ui left label basic">
+                  Get divorced
+                </button>
+              </div>
+
+            </div>
+
+            <div class="account column">
+              <img src="./images/divorce.png">
+            </div>
+
+          </div>
+
+        </div>
+      </form>
+
+      <br /><br />
+      <div id="status-message-wrapper" class="ui warning message transition hidden">
+        <div class="header">Status message</div>
+        <p id="status"></p>
+      </div>
+
+    </div><!-- .wrapper -->
+  </div><!-- #bg-image-footer -->
 </body>
 </html>
