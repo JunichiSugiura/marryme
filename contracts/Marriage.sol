@@ -57,7 +57,7 @@ contract Marriage {
       }
     } else {
       if(msg.value != partner1.initAmount) {
-        throw;  
+        throw;
       }
     }
   }
