@@ -34,5 +34,10 @@
     "style-loader": "^0.13.1",
     "web3": "^0.17.0-alpha",
     "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "url-loader": "^0.5.7"
   }
 }
