@@ -1,4 +1,4 @@
-import {} from "../stylesheets/app.scss";
+import {} from '../stylesheets/app.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
