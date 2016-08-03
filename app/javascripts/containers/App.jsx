@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch) {
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="wrapper">
         <div className="ui center aligned icon header">
           <h1>Marry me</h1>
           <h3>Reliable marriage &amp; economic divorce on the blockchain.</h3>
@@ -155,6 +155,8 @@ class App extends Component {
           <div className="header">Status message</div>
           <p id="status"></p>
         </div>
+
+        <div id="bg-image-footer"></div>
       </div>
     )
   }
