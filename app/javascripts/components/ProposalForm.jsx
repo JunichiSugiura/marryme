@@ -1,83 +1,70 @@
 import React, { Component } from 'react';
 
 export default class ProposalForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      marriage: {}
+    };
+  }
+
   render() {
     return(
-      <div>
-        <form id="form-getmarried" className="ui form">
-          <div className="row">
-            <div className="ui two column middle aligned very relaxed stackable grid">
-              <div className="account-1 column">
-                <div id="account_1" className="field field-account">
-                  <label>Account ID</label>
-                  <input type="text" name="account_1" placeholder="Ethereum account id" />
-                </div>
+      <form id="form-getmarried" className="ui form">
+        <div>
+          <div>
+            <div>
+              <label htmlFor="wallet0">Wallet Address</label>
+              <input type="text" name="wallet0" placeholder="Wallet Address1" />
+            </div>
 
-                <div className="field field-ether">
-                  <p className="ui my-label">Initial amount of Ether</p>
-                  <div className="ui right labeled input">
-                    <input type="number" step="0.1" name="ether_1" placeholder="100" />
-                    <div className="ui basic label">
-                      ether
-                    </div>
-                  </div>
-                </div>
+            <div>
+              <lable htmlFor="initAmount0">Initial amount</lable>
+              <input type="number" step="0.001" name="initAmount0" placeholder="0.005" />ETH
+            </div>
 
-                <div className="field field-share">
-                  <p className="ui my-label">Share after divorce</p>
-                  <div className="ui right labeled input">
-                    <input id="share_1" className="share-value" type="number" name="share_1" min="0" max="100" />
-                    <div className="ui basic label"> % </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="ui vertical divider">&amp;</div>
-
-              <div className="account-2 column">
-                <div id="account_2" className="field field-account">
-                  <label>Account ID</label>
-                  <input type="text" name="account_2" placeholder="Ethereum account id" />
-                </div>
-
-                <div className="field field-ether">
-                  <p className="ui my-label">Initial amount of Ether</p>
-                  <div className="ui right labeled input">
-                    <input type="number" step="0.1" name="ether_2" placeholder="100" />
-                    <div className="ui basic label">
-                      ether
-                    </div>
-                  </div>
-                </div>
-
-                <div className="field field-share">
-                  <p className="ui my-label">Share after divorce</p>
-                  <div className="ui right labeled input">
-                    <input id="share_2" className="share-value" type="number" name="share_2" min="0" max="100" />
-                    <div className="ui basic label"> % </div>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <label htmlFor="splitShare0">Share after divorce</label>
+              <input type="number" name="splitShare0" min="0" max="100" />%
             </div>
           </div>
 
-          <div className="row">
-            <div className="ui stackable one column grid">
-              <h3>Divorce agreement</h3>
-              <p className="ui radio checkbox read-only inline fields">
-                <input type="radio" name="uniliteral" />
-                <label>Uniliteral</label>
-                <input type="radio" name="consensual" />
-                <label>Consensual</label>
-              </p>
+          <div>&amp;</div>
 
-              <p className="field">
-                <button id="marriange-submit" className="ui button"  type="submit">Submit</button>
-              </p>
+          <div>
+            <div>
+              <label htmlFor="wallet1">Wallet Address</label>
+              <input type="text" name="wallet1" placeholder="Wallet Address" />
+            </div>
+
+            <div>
+              <lable htmlFor="initAmount1">Initial amount</lable>
+              <input type="number" step="0.001" name="initAmount1" placeholder="0.005" />ETH
+            </div>
+
+            <div>
+              <label htmlFor="splitShare1">Share after divorce</label>
+              <input type="number" name="splitShare1" min="0" max="100" />%
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+
+        <div>
+          <div>
+            <h3>Divorce agreement</h3>
+            <div>
+              <input type="radio" name="uniliteral" />
+              <label htmlFor="uniliteral">Uniliteral</label>
+              <input type="radio" name="consensual" />
+              <label htmlFor="consensual">Consensual</label>
+            </div>
+
+            <div>
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
     );
   }
 }
