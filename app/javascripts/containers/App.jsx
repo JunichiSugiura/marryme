@@ -106,6 +106,55 @@ class App extends Component {
             </div>
           </div>
         </form>
+
+        <form id="form-marriage-actions" className="ui form">
+          <input id="marriage-id" name="marriage-id" type="hidden" />
+          <div className="row">
+            <div className="ui two column middle aligned very relaxed stackable grid">
+              <div className="account column">
+                <img src="./images/confirm.png" />
+              </div>
+
+              <div className="account column">
+                <p><strong>Yeah!</strong> Your marriage contract is in proposal state. You may confirm it or modify it and resend it to your potential partner for confirmation.</p>
+                <div id="marriage-confirm" className="ui labeled button" tabIndex="0">
+                  <div className="ui red button right pointing">
+                    <i className="heart icon"></i>
+                  </div>
+                  <button id="marriage-confirm" name="marriage-confirm" className="ui basic red label">
+                    Confirm marriage contract
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="ui two column middle aligned very relaxed stackable grid">
+              <div className="column">
+                <p><strong>Sick of it?</strong><br /> No problem. Your divorce is just on click away.</p>
+                <div id="marriage-divorce" className="ui labeled button blue" tabIndex="0">
+                  <div className="ui blue button pointing">
+                    <i className="fork large icon"></i>
+                  </div>
+                  <button name="marriage-divorce" className="ui left label basic">
+                    Get divorced
+                  </button>
+                </div>
+              </div>
+
+              <div className="account column">
+                <img src="./images/divorce.png" />
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <br /><br />
+        <div id="status-message-wrapper" className="ui warning message transition hidden">
+          <div className="header">Status message</div>
+          <p id="status"></p>
+        </div>
       </div>
     )
   }
