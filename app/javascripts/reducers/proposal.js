@@ -11,7 +11,8 @@ const initailState = {
       initAmount: 0,
       splitShare: 0
     }
-  ]
+  ],
+  divorceType: ''
 };
 
 export default function proposal(state = initailState, action) {
@@ -34,6 +35,9 @@ export default function proposal(state = initailState, action) {
         return i === action.i ? { ...partner, splitShare: action.splitShare } : partner;
       });
       return { ...state, partners }
+
+    case 'UPDATE_DIVORCE_TYPE':
+      return { ...state, divorceType: action.divorceType }
 
     default:
       return state;

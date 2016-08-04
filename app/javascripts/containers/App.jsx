@@ -22,6 +22,20 @@ class App extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    web3.eth.getAccounts((err, res) => {
+      if(err != null) {
+        return console.log('There was an error fetching you accounts.');
+      }
+
+      if(res.length === 0) {
+        return console.log("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
+      }
+
+      console.log(res);
+    });
+  }
+
   render() {
     return (
       <div className="wrapper">

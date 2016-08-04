@@ -12,6 +12,11 @@ export default class ProposalForm extends Component {
     console.log('submitted');
   }
 
+  handleOnChangeDivorceType(e) {
+    const { updateDivorceType, i } = this.props;
+    updateDivorceType({divorceType: e.target.id});
+  }
+
   render() {
     const { proposal, updateAddress, updateInitAmount, updateSplitShare } = this.props;
     const { partners } = this.props.proposal;
@@ -38,9 +43,9 @@ export default class ProposalForm extends Component {
           <div>
             <h3>Divorce agreement</h3>
             <div>
-              <input type="radio" name="uniliteral" />
+              <input type="radio" name="divorceType" id="uniliteral" onChange={this.handleOnChangeDivorceType.bind(this)} />
               <label htmlFor="uniliteral">Uniliteral</label>
-              <input type="radio" name="consensual" />
+              <input type="radio" name="divorceType" id="consensual" onChange={this.handleOnChangeDivorceType.bind(this)} />
               <label htmlFor="consensual">Consensual</label>
             </div>
 

@@ -21,3 +21,10 @@ export function updateSplitShare(attr) {
     splitShare: attr.splitShare
   }
 }
+
+export function updateDivorceType(attr) {
+  return {
+    type: 'UPDATE_DIVORCE_TYPE',
+    divorceType: attr.divorceType
+  }
+}
