@@ -16,8 +16,11 @@ const initailState = {
 
 export default function proposal(state = initailState, action) {
   switch(action.type) {
-    case 'UPDATE_PROPOSAL':
-      return state;
+    case 'UPDATE_ADDRESS':
+      const partners = state.partners.map((partner, i) => {
+        return i === action.i ? {...partner, address: action.address} : partner;
+      });
+      return {...state, partners};
     default:
       return  state;
   }

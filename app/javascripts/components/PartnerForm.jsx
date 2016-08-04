@@ -5,26 +5,35 @@ export default class PartnerForm extends Component {
     super(props);
   }
 
+  handleOnChangeAddress(e) {
+    this.props.updateAddress({i: this.props.i, address: e.target.value});
+  }
+
   render() {
-    const { partner, needAndSign } = this.props;
+    const { i, partner, needAndSign } = this.props;
     const { address, initAmount, splitShare } = partner;
     const andSign = needAndSign ? <div>&amp;</div> : null;
 
     return(
       <div>
         <div>
-          <label htmlFor={`wallet${this.key}`}>Wallet Address</label>
-          <input type="text" name={`wallet${this.key}`} placeholder="Wallet Address" value={address} />
+          <label htmlFor={`wallet${i}`}>Wallet address</label>
+          <input
+            type="text"
+            id={`wallet${i}`}
+            placeholder="0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            value={address}
+            onChange={this.handleOnChangeAddress.bind(this)} />
         </div>
 
         <div>
-          <lable htmlFor={`initAmount${this.key}`}>Initial amount</lable>
-          <input type="number" step="0.001" name={`initAmount${this.key}`} placeholder="0.005" value={initAmount} />ETH
+          <label htmlFor={`initAmount${i}`}>Initial amount</label>
+          <input type="number" step="0.001" id={`initAmount${i}`} placeholder="0.005" value={initAmount} />ETH
         </div>
 
         <div>
-          <label htmlFor={`splitShare${this.key}`}>Share after divorce</label>
-          <input type="number" name={`splitShare${this.key}`} min="0" max="100" value={splitShare} />%
+          <label htmlFor={`splitShare${i}`}>Share after divorce</label>
+          <input type="number" id={`splitShare${i}`} min="0" max="100" value={splitShare} />%
         </div>
 
         {andSign}

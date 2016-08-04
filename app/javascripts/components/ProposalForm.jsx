@@ -7,20 +7,27 @@ export default class ProposalForm extends Component {
     super(props);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     console.log('submitted');
   }
 
   render() {
+    const { proposal, updateAddress} = this.props;
     const { partners } = this.props.proposal;
 
     return(
-      <form id="form-getmarried" className="ui form" onSubmit={this.handleSubmit.bind(this)}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <div>
           {partners.map((partner, i) => {
             const andSign = i !== partners.length - 1 ?  <div>&amp;</div> : null;
             return(
-              <PartnerForm key={i} partner={partner} needAndSign={i !== partners.length - 1} />
+              <PartnerForm
+                key={i}
+                partner={partner}
+                needAndSign={i !== partners.length - 1}
+                i={i}
+                updateAddress={updateAddress} />
             );
           })}
         </div>
