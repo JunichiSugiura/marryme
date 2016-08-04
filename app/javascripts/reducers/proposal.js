@@ -15,13 +15,27 @@ const initailState = {
 };
 
 export default function proposal(state = initailState, action) {
+  let partners;
   switch(action.type) {
     case 'UPDATE_ADDRESS':
-      const partners = state.partners.map((partner, i) => {
-        return i === action.i ? {...partner, address: action.address} : partner;
+      partners = state.partners.map((partner, i) => {
+        return i === action.i ? { ...partner, address: action.address } : partner;
       });
-      return {...state, partners};
+      return { ...state, partners };
+
+    case 'UPDATE_INIT_AMOUNT':
+      partners = state.partners.map((partner, i) => {
+        return i === action.i ? { ...partner, initAmount: action.initAmount } : partner;
+      });
+      return { ...state, partners };
+
+    case 'UPDATE_SPLIT_SHARE':
+      partners = state.partners.map((partner, i) => {
+        return i === action.i ? { ...partner, splitShare: action.splitShare } : partner;
+      });
+      return { ...state, partners }
+
     default:
-      return  state;
+      return state;
   }
 }

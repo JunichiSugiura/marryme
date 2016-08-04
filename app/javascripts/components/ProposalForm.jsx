@@ -13,7 +13,7 @@ export default class ProposalForm extends Component {
   }
 
   render() {
-    const { proposal, updateAddress} = this.props;
+    const { proposal, updateAddress, updateInitAmount, updateSplitShare } = this.props;
     const { partners } = this.props.proposal;
 
     return(
@@ -27,7 +27,9 @@ export default class ProposalForm extends Component {
                 partner={partner}
                 needAndSign={i !== partners.length - 1}
                 i={i}
-                updateAddress={updateAddress} />
+                updateAddress={updateAddress}
+                updateInitAmount={updateInitAmount}
+                updateSplitShare={updateSplitShare} />
             );
           })}
         </div>

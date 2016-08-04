@@ -6,7 +6,18 @@ export default class PartnerForm extends Component {
   }
 
   handleOnChangeAddress(e) {
-    this.props.updateAddress({i: this.props.i, address: e.target.value});
+    const { updateAddress, i} = this.props;
+    updateAddress({i: i, address: e.target.value});
+  }
+
+  handleOnChangeInitAmount(e) {
+    const { updateInitAmount, i } = this.props;
+    updateInitAmount({i: i, initAmount: e.target.value});
+  }
+
+  handleOnChangeSplitShare(e) {
+    const { updateSplitShare, i } = this.props;
+    updateSplitShare({i: i, splitShare: e.target.value});
   }
 
   render() {
@@ -28,12 +39,24 @@ export default class PartnerForm extends Component {
 
         <div>
           <label htmlFor={`initAmount${i}`}>Initial amount</label>
-          <input type="number" step="0.001" id={`initAmount${i}`} placeholder="0.005" value={initAmount} />ETH
+          <input
+            type="number"
+            step="0.001"
+            id={`initAmount${i}`}
+            placeholder="0.005"
+            value={initAmount}
+            onChange={this.handleOnChangeInitAmount.bind(this)} />ETH
         </div>
 
         <div>
           <label htmlFor={`splitShare${i}`}>Share after divorce</label>
-          <input type="number" id={`splitShare${i}`} min="0" max="100" value={splitShare} />%
+          <input
+            type="number"
+            id={`splitShare${i}`}
+            min="0"
+            max="100"
+            value={splitShare}
+            onChange={this.handleOnChangeSplitShare.bind(this)} />%
         </div>
 
         {andSign}
