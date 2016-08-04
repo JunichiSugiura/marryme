@@ -7,11 +7,15 @@ import Divorce from './Divorce';
 import Status from './Status';
 
 export default class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return(
       <div>
         <Search />
-        <ProposalForm />
+        <ProposalForm {...this.props} />
         <Confirmation />
         <Divorce />
         <Status />

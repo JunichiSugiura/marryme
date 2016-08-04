@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import marriage from './marriage';
+import proposal from './proposal';
 
 export default combineReducers({
-  marriage
+  proposal
 });

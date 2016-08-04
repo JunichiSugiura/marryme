@@ -14,9 +14,9 @@ const initailState = {
   ]
 };
 
-export default function marriage(state = initailState, action) {
+export default function proposal(state = initailState, action) {
   switch(action.type) {
-    case 'UPDATE':
+    case 'UPDATE_PROPOSAL':
       return state;
     default:
       return  state;

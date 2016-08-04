@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <Header />
-        <Main />
+        <Main {...this.props} />
         <Footer />
       </div>
     )

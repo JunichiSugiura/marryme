@@ -1,52 +1,28 @@
 import React, { Component } from 'react';
 
+import PartnerForm from './PartnerForm';
+
 export default class ProposalForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      marriage: {}
-    };
+  }
+
+  handleSubmit() {
+    console.log('submitted');
   }
 
   render() {
+    const { partners } = this.props.proposal;
+
     return(
-      <form id="form-getmarried" className="ui form">
+      <form id="form-getmarried" className="ui form" onSubmit={this.handleSubmit.bind(this)}>
         <div>
-          <div>
-            <div>
-              <label htmlFor="wallet0">Wallet Address</label>
-              <input type="text" name="wallet0" placeholder="Wallet Address1" />
-            </div>
-
-            <div>
-              <lable htmlFor="initAmount0">Initial amount</lable>
-              <input type="number" step="0.001" name="initAmount0" placeholder="0.005" />ETH
-            </div>
-
-            <div>
-              <label htmlFor="splitShare0">Share after divorce</label>
-              <input type="number" name="splitShare0" min="0" max="100" />%
-            </div>
-          </div>
-
-          <div>&amp;</div>
-
-          <div>
-            <div>
-              <label htmlFor="wallet1">Wallet Address</label>
-              <input type="text" name="wallet1" placeholder="Wallet Address" />
-            </div>
-
-            <div>
-              <lable htmlFor="initAmount1">Initial amount</lable>
-              <input type="number" step="0.001" name="initAmount1" placeholder="0.005" />ETH
-            </div>
-
-            <div>
-              <label htmlFor="splitShare1">Share after divorce</label>
-              <input type="number" name="splitShare1" min="0" max="100" />%
-            </div>
-          </div>
+          {partners.map((partner, i) => {
+            const andSign = i !== partners.length - 1 ?  <div>&amp;</div> : null;
+            return(
+              <PartnerForm key={i} partner={partner} needAndSign={i !== partners.length - 1} />
+            );
+          })}
         </div>
 
         <div>
