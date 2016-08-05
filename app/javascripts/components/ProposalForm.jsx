@@ -22,8 +22,8 @@ export default class ProposalForm extends Component {
     const { partners } = this.props.proposal;
 
     return(
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <div>
+      <form onSubmit={this.handleSubmit.bind(this)} className="ui form">
+        <div className="ui two column middle aligned very relaxed stackable grid">
           {partners.map((partner, i) => {
             const andSign = i !== partners.length - 1 ?  <div>&amp;</div> : null;
             return(

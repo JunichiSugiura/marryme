@@ -26,9 +26,11 @@ export default class PartnerForm extends Component {
     const andSign = needAndSign ? <div>&amp;</div> : null;
 
     return(
-      <div>
+      <div className="column">
         <div>
-          <label htmlFor={`wallet${i}`}>Wallet address</label>
+          <div>
+            <label htmlFor={`wallet${i}`}>Wallet address</label>
+          </div>
           <input
             type="text"
             id={`wallet${i}`}
@@ -38,25 +40,35 @@ export default class PartnerForm extends Component {
         </div>
 
         <div>
-          <label htmlFor={`initAmount${i}`}>Initial amount</label>
-          <input
-            type="number"
-            step="0.001"
-            id={`initAmount${i}`}
-            placeholder="0.005"
-            value={initAmount}
-            onChange={this.handleOnChangeInitAmount.bind(this)} />ETH
+          <div>
+            <label htmlFor={`initAmount${i}`}>Initial amount</label>
+          </div>
+          <div className="ui right labeled input">
+            <input
+              type="number"
+              step="0.001"
+              id={`initAmount${i}`}
+              placeholder="0.005"
+              value={initAmount}
+              onChange={this.handleOnChangeInitAmount.bind(this)} />
+            <div className="ui basic label right">ETH</div>
+          </div>
         </div>
 
         <div>
-          <label htmlFor={`splitShare${i}`}>Share after divorce</label>
-          <input
-            type="number"
-            id={`splitShare${i}`}
-            min="0"
-            max="100"
-            value={splitShare}
-            onChange={this.handleOnChangeSplitShare.bind(this)} />%
+          <div>
+            <label htmlFor={`splitShare${i}`}>Share after divorce</label>
+          </div>
+          <div className="ui right labeled input">
+            <input
+              type="number"
+              id={`splitShare${i}`}
+              min="0"
+              max="100"
+              value={splitShare}
+              onChange={this.handleOnChangeSplitShare.bind(this)} />
+            <div className="ui basic label right">%</div>
+          </div>
         </div>
 
         {andSign}
