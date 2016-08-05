@@ -1,4 +1,5 @@
 import {} from '../stylesheets/app.scss';
+import {} from '../../semantic/dist/semantic.css';
 
 import React from 'react';
 import { render } from 'react-dom';

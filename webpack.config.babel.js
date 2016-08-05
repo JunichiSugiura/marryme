@@ -29,10 +29,10 @@ export default {
   },
   module: {
     loaders: [
-      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: "babel"},
-      { test: /\.scss$/i, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")},
-      { test: /\.json$/i, loader: "json"},
-      { test: /\.(jpg|png)$/, loader: 'url-loader'}
+      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: "babel" },
+      { test: /\.(scss|css)$/i, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
+      { test: /\.json$/i, loader: "json" },
+      { test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   plugins: [

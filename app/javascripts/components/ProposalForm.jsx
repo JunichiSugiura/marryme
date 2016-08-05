@@ -43,9 +43,17 @@ export default class ProposalForm extends Component {
           <div>
             <h3>Divorce agreement</h3>
             <div>
-              <input type="radio" name="divorceType" id="uniliteral" onChange={this.handleOnChangeDivorceType.bind(this)} />
+              <input
+                type="radio"
+                name="divorceType"
+                id="uniliteral"
+                onChange={this.handleOnChangeDivorceType.bind(this)} />
               <label htmlFor="uniliteral">Uniliteral</label>
-              <input type="radio" name="divorceType" id="consensual" onChange={this.handleOnChangeDivorceType.bind(this)} />
+              <input
+                type="radio"
+                name="divorceType"
+                id="consensual"
+                onChange={this.handleOnChangeDivorceType.bind(this)} />
               <label htmlFor="consensual">Consensual</label>
             </div>
 

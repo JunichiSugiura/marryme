@@ -12,7 +12,7 @@ const initailState = {
       splitShare: 0
     }
   ],
-  divorceType: ''
+  divorceType: 'uniliteral'
 };
 
 export default function proposal(state = initailState, action) {
