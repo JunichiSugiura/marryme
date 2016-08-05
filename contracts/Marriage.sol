@@ -66,7 +66,7 @@ contract Marriage {
     phase = PhaseOptions.Married;
   }
 
-  function divornce() public {
+  function divorce() public {
     if(msg.sender == partner0.wallet) {
       partner0.wallet.send(this.balance * (partner0.splitShare / 100));
     } else {
