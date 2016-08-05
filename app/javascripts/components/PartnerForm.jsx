@@ -31,6 +31,7 @@ export default class PartnerForm extends Component {
           <div>
             <label htmlFor={`wallet${i}`}>Wallet address</label>
           </div>
+
           <input
             type="text"
             id={`wallet${i}`}
@@ -43,6 +44,7 @@ export default class PartnerForm extends Component {
           <div>
             <label htmlFor={`initAmount${i}`}>Initial amount</label>
           </div>
+
           <div className="ui right labeled input">
             <input
               type="number"
@@ -59,6 +61,7 @@ export default class PartnerForm extends Component {
           <div>
             <label htmlFor={`splitShare${i}`}>Share after divorce</label>
           </div>
+          
           <div className="ui right labeled input">
             <input
               type="number"
